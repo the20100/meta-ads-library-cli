@@ -36,6 +36,7 @@ meta-adlib ad get 123456789012345
 ## Installation
 
 ```bash
+git clone https://github.com/the20100/meta-ad-library-cli
 cd meta-ad-library-cli
 go build -o meta-adlib .
 mv meta-adlib /usr/local/bin/
@@ -167,6 +168,20 @@ meta-adlib search --query "shoes" --country FR --json | jq '.[].page_name'
 # Save to file
 meta-adlib search --query "election" --country US --limit 0 --json > ads.json
 ```
+
+---
+
+---
+
+### `update` — Self-update
+
+Pull the latest source from GitHub, rebuild, and replace the current binary.
+
+```bash
+meta-adlib update
+```
+
+Requires `git` and `go` to be installed.
 
 ---
 
