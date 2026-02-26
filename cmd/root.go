@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/vincentmaurin/meta-ad-library-cli/internal/api"
-	"github.com/vincentmaurin/meta-ad-library-cli/internal/config"
-	"github.com/vincentmaurin/meta-ad-library-cli/internal/metaauth"
+	"github.com/the20100/meta-ad-library-cli/internal/api"
+	"github.com/the20100/meta-ad-library-cli/internal/config"
+	"github.com/the20100/meta-ad-library-cli/internal/metaauth"
 )
 
 var (

@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/vincentmaurin/meta-ad-library-cli/internal/api"
-	"github.com/vincentmaurin/meta-ad-library-cli/internal/output"
+	"github.com/the20100/meta-ad-library-cli/internal/api"
+	"github.com/the20100/meta-ad-library-cli/internal/output"
 )
 
 const adDetailFields = "id,ad_creation_time,ad_delivery_start_time,ad_delivery_stop_time," +

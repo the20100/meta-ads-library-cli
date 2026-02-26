@@ -1,4 +1,4 @@
-module github.com/vincentmaurin/meta-ad-library-cli
+module github.com/the20100/meta-ad-library-cli
 
 go 1.22
 
