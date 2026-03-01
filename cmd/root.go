@@ -186,10 +186,23 @@ func maskOrEmpty(v string) string {
 	return v[:4] + "..." + v[len(v)-4:]
 }
 
+// resolveEnv returns the value of the first non-empty environment variable from the given names.
+func resolveEnv(names ...string) string {
+	for _, name := range names {
+		if v := os.Getenv(name); v != "" {
+			return v
+		}
+	}
+	return ""
+}
+
 // resolveToken returns the best available token using the priority chain.
 func resolveToken() (string, error) {
-	// 1. META_TOKEN env var (universal override for all Meta CLIs)
-	if t := os.Getenv("META_TOKEN"); t != "" {
+	// 1. META_TOKEN env var (universal override for all Meta CLIs; try all aliases)
+	if t := resolveEnv(
+		"META_TOKEN", "META_ACCESS_TOKEN", "META_API_TOKEN", "META_BEARER_TOKEN",
+		"TOKEN_META", "META_KEY", "META_API_KEY", "META_API", "API_KEY_META", "API_META",
+	); t != "" {
 		return t, nil
 	}
 
